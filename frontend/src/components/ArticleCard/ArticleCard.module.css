@@ -55,9 +55,13 @@
 }
 
 .cta {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: none;
   border: 1px solid rgba(0, 0, 0, 0.1);
   height: 50px;
   width: 100%;
+  text-decoration: none;
+  color: inherit;
 }

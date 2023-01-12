@@ -1,14 +1,11 @@
 import { ArticleCard } from "../../../../components/ArticleCard"
 import styles from "./Feed.module.css"
-import { useQuery } from "react-query"
+// import { useQuery } from "react-query"
+import { useStore } from "../../../AppContext"
+
 export const Feed = () => {
-  const {
-    isLoading,
-    error,
-    data: articleList,
-  } = useQuery("repoData", () =>
-    fetch("http://localhost:3000/articles").then((res) => res.json())
-  )
+  const store = useStore()
+  const { isLoading, error, data: articleList } = store.articles
 
   if (isLoading) return "Loading..."
 
